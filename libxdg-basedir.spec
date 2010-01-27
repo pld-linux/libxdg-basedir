@@ -1,13 +1,12 @@
-#
 Summary:	An implementation of the XDG Base Directory specification
 Summary(pl.UTF-8):	Implementacja specyfikacji XDG Base Directory
 Name:		libxdg-basedir
-Version:	1.0.1
+Version:	1.0.2
 Release:	1
 License:	Custom (see LICENSE)
 Group:		Libraries
 Source0:	http://n.ethz.ch/~nevillm/download/libxdg-basedir/%{name}-%{version}.tar.gz
-# Source0-md5:	941dacde04db15164c9aca5a1d856665
+# Source0-md5:	944202425e5359666f268d18671303d4
 Source1:	%{name}-LICENSE
 URL:		http://n.ethz.ch/~nevillm/download/libxdg-basedir/
 BuildRequires:	autoconf
