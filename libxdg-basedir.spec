@@ -3,11 +3,10 @@ Summary(pl.UTF-8):	Implementacja specyfikacji XDG Base Directory
 Name:		libxdg-basedir
 Version:	1.1.0
 Release:	1
-License:	Custom (see LICENSE)
+License:	MIT
 Group:		Libraries
 Source0:	http://n.ethz.ch/~nevillm/download/libxdg-basedir/%{name}-%{version}.tar.gz
 # Source0-md5:	edf23c2bc530f6ca94b7ff6107064614
-Source1:	%{name}-LICENSE
 URL:		http://n.ethz.ch/~nevillm/download/libxdg-basedir/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,8 +46,6 @@ Statyczna biblioteka libxdg-basedir.
 %prep
 %setup -q
 
-cp %{SOURCE1} LICENSE
-
 %build
 %{__libtoolize}
 %{__aclocal}
@@ -73,7 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE
 %attr(755,root,root) %{_libdir}/%{name}.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/%{name}.so.1
 
