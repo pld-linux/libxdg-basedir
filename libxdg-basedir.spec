@@ -2,7 +2,7 @@ Summary:	An implementation of the XDG Base Directory specification
 Summary(pl.UTF-8):	Implementacja specyfikacji XDG Base Directory
 Name:		libxdg-basedir
 Version:	1.1.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://n.ethz.ch/~nevillm/download/libxdg-basedir/%{name}-%{version}.tar.gz
@@ -62,6 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libxdg-basedir.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -76,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/%{name}.so
-%{_libdir}/%{name}.la
 %{_includedir}/basedir.h
 %{_includedir}/basedir_fs.h
 %{_pkgconfigdir}/%{name}.pc
