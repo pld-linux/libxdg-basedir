@@ -1,13 +1,13 @@
 Summary:	An implementation of the XDG Base Directory specification
 Summary(pl.UTF-8):	Implementacja specyfikacji XDG Base Directory
 Name:		libxdg-basedir
-Version:	1.2.0
-Release:	3
+Version:	1.2.3
+Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://n.ethz.ch/~nevillm/download/libxdg-basedir/%{name}-%{version}.tar.gz
-# Source0-md5:	5a9eaaba2ec7f62253ecaed032af313b
-URL:		http://n.ethz.ch/~nevillm/download/libxdg-basedir/
+Source0:	https://github.com/devnev/libxdg-basedir/archive/%{name}-%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	6fee7e4ce612f79dacfc8867687737ac
+URL:		https://github.com/devnev/libxdg-basedir
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -44,7 +44,7 @@ Static libxdg-basedir library.
 Statyczna biblioteka libxdg-basedir.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{name}-%{version}
 
 %build
 %{__libtoolize}
