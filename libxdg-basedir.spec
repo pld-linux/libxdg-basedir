@@ -5,6 +5,7 @@ Version:	1.2.3
 Release:	1
 License:	MIT
 Group:		Libraries
+#Source0Download: https://github.com/devnev/libxdg-basedir/tags
 Source0:	https://github.com/devnev/libxdg-basedir/archive/%{name}-%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	6fee7e4ce612f79dacfc8867687737ac
 URL:		https://github.com/devnev/libxdg-basedir
@@ -23,7 +24,7 @@ Implementacja specyfikacji XDG Base Directory.
 Summary:	Header files for libxdg-basedir library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libxdg-basedir
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for libxdg-basedir library.
@@ -35,7 +36,7 @@ Pliki nagłówkowe biblioteki libxdg-basedir.
 Summary:	Static libxdg-basedir library
 Summary(pl.UTF-8):	Statyczna biblioteka libxdg-basedir.
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libxdg-basedir library.
@@ -72,17 +73,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING
-%attr(755,root,root) %{_libdir}/%{name}.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/%{name}.so.1
+%doc COPYING README.md
+%{_libdir}/libxdg-basedir.so.*.*
+%ghost %{_libdir}/libxdg-basedir.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/%{name}.so
+%{_libdir}/libxdg-basedir.so
 %{_includedir}/basedir.h
 %{_includedir}/basedir_fs.h
-%{_pkgconfigdir}/%{name}.pc
+%{_pkgconfigdir}/libxdg-basedir.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/%{name}.a
+%{_libdir}/libxdg-basedir.a
